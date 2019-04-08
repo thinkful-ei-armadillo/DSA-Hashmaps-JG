@@ -9,8 +9,6 @@ function main(){
   HashMap.SIZE_RATIO = 3;
 
   let lor = new HashMap;
-  // lor.MAX_LOAD_RATIO = 0.5;
-  // lor.SIZE_RATIO = 3;
 
   lor.set('Hobbit', 'Bilbo');
   lor.set('Hobbit', 'Frodo');
@@ -32,19 +30,26 @@ function main(){
   SepHashMap.SIZE_RATIO = 3;
 
   let lotr = new SepHashMap;
-  // lor.MAX_LOAD_RATIO = 0.5;
-  // lor.SIZE_RATIO = 3;
-  const chums = [{'Hobbit': 'Bilbo'}, {'Hobbit': 'Frodo'},
-    {'Wizard': 'Gandolf'}, {'Human': 'Aragon'}, {'Elf': 'Legolas'}, {'Maiar': 'The Necromancer'},
-    {'Maiar': 'Sauron'}, {'RingBearer': 'Gollum'}, {'LadyOfLight': 'Galadriel'}, {'HalfElven': 'Arwen'},
+  const chums = [
+    {'Hobbit': 'Bilbo'}, 
+    {'Hobbit': 'Frodo'},
+    {'Wizard': 'Gandolf'}, 
+    {'Human': 'Aragon'}, 
+    {'Elf': 'Legolas'}, 
+    {'Maiar': 'The Necromancer'},
+    {'Maiar': 'Sauron'}, 
+    {'RingBearer': 'Gollum'}, 
+    {'LadyOfLight': 'Galadriel'}, 
+    {'HalfElven': 'Arwen'},
     {'Ent': 'Treebeard'}];
   chums.forEach(chum => {
+
     const character = Object.keys(chum)[0];
+
     lotr.set(character, chum[character]);
   });
-  console.log(lotr);
 
-  // Retrieve the value that is hashed in the key "Maiar" and Hobbit.
+  console.log(lotr);
   console.log(lotr.get('Hobbit'));
   console.log(lotr.get('Maiar'));
 }
